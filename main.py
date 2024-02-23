@@ -1,23 +1,21 @@
-#import enquiry
-#import product
+import enquiry
+import product1
 import source
 
 def main_menu():
     while True:
-        print("\nMain Menu:")
+        print("\NMAIN MENU :")
         print("1. PRODUCT MENU")
         print("2. SOURCE MENU")
         print("3. ENQUIRY MENU")
-        print("4. Exit")
+        print("4. EXIT")
         choice = input("Enter your choice: ")
         if choice == "1":
-            pass
-            #product.product_menu()
+            product1.product_menu()
         elif choice == "2":
             source.source_menu()
         elif choice == "3":
-            pass
-            #enquiry.main_menu()
+            enquiry.main_menu()
         elif choice == '4':
             break
         else:

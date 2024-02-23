@@ -1,5 +1,4 @@
-["E1", "2022-05-15", "John dep", "Nick Fury", "USA", "765486321", "john@gmail.com", "Exhibition", "Interested in Iphone 16"]
-["E2", "2022-06-02", "Robert", "Nick Fury", "USA", "987525789", "ironman@gmail.com", "website", "Interested in Interested in Iphone 16 pro"]
-["E3", "2022-07-20", "Tom holland", "loki", "USA", "8765325678", "tom@gmail.com", "Paper Advertisement", "Interested in Ihone 17"]
-["E4", "2022-08-12", "Ms. Marvel", "Thor", "USA", "9875423246", "marvel@gmail.com", "seminar", "Interested in Iphone 17 pro"]
-["E5", "2022-09-05", "peter parker", "loki", "USA", "6799543245", "peter@gmail.com", "Exhibition", "Interested in Iphone 18"]
+Inquiries:
+{'Inquiry Number': '1', 'Customer Name': 'Hritik', 'Date': '22-2-2024', 'Contact Person': 'Madhavan', 'Address': 'Jabalpur', 'Phone Number': '876545672', 'Email': 'hritik@gmail.com', 'Source': 'Linkedin', 'Product Inquired': 'iphone'}
+{'Inquiry Number': '2', 'Customer Name': 'Madhavan', 'Date': '22-02-2024', 'Contact Person': 'Akhil', 'Address': 'Delhi', 'Phone Number': '876545678765', 'Email': 'madav@gmail.com', 'Source': 'Facebook', 'Product Inquired': 'car'}
+{'Inquiry Number': '3', 'Customer Name': 'Akhil', 'Date': '22-02-2024', 'Contact Person': 'Saranya', 'Address': 'Mumbai', 'Phone Number': '9876567876', 'Email': 'Akhil@gmail.com', 'Source': 'newspaper', 'Product Inquired': 'Bike'}

@@ -61,15 +61,18 @@ def save_data():
             f.write(str(inquiry) + '\n')
     print("Data saved successfully.")
 
-def main_menu():
+def enquiry_menu():
     while True:
-        print("\nMain Menu:")
-        print("1. Display Inquiries")
-        print("2. Add Inquiry")
-        print("3. Delete Inquiry")
-        print("4. Search Inquiry")
-        print("5. Exit")
-        choice = input("Enter your choice: ")
+        print("""
+            ENQUIRY MENU:
+            --------------------
+            1. DISPLAY ENQUIRIES
+            2. ADD ENQUIRY
+            3. DELETE ENQUIRY
+            4. SEARCH ENQUIRY
+            5. GO BACK
+            """)
+        choice = input("\tEnter your choice: ")
         if choice == "1":
             display_inquiries()
         elif choice == "2":
@@ -81,9 +84,10 @@ def main_menu():
             inquiry_number = input("Enter inquiry number to search: ")
             search_inquiry(inquiry_number)
         elif choice == "5":
+            print("\n... GOING BACK ...")
             break
         else:
             print("Invalid choice. Please try again.")
 
 # Start the main menu
-main_menu()
+#enquiry_menu()
