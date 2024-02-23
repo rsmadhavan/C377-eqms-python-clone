@@ -1,8 +1,12 @@
 def get_source():
-    with open('source.txt', 'r') as file:
-        source=file.readlines()
-        source=[s.strip() for s in source]
-        return source
+    try:
+        with open('source.txt', 'r') as file:
+            source=file.readlines()
+            source=[s.strip() for s in source]
+            return source
+    except FileNotFoundError:
+        print("Error: Could not find the file 'source.txt'")
+        return []
 
 def display_source():
     with open('source.txt', 'r') as file:
@@ -16,3 +20,5 @@ def add_source():
     with open('source.txt', 'a') as file:
         file.write('\n')
         file.write(source)
+
+print(get_source())
