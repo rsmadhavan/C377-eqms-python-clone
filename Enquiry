@@ -1,9 +1,10 @@
 inquiries = []
 
 def display_inquiries():
-    print("Inquiries:")
-    for inquiry in inquiries:
-        print(inquiry)
+    with open('D:\\data.txt','r')as file:
+        data=file.readlines()
+        data=[d.strip() for d in data]
+        print(data)
 
 def add_inquiry():
     inquiry_number = input("Enter inquiry number: ")
