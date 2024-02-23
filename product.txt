@@ -1,0 +1,7 @@
+['iphone',001,65000,'made by apple']
+['macbook',002,119990,'premium laptop']
+['samsung s24',003,84000,'samsung flagship']
+['canon 3000D',004,31999,'budget camera']
+
+
+

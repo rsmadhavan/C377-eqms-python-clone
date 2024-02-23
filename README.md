@@ -3,6 +3,6 @@
 ## Team members
 - Akhil Darla
 - Saranya
-- Hrithik Kesharwani
+- Hritik Kesharwani
 - Madhavan
 - Tharun Reddy

@@ -1,0 +1,8 @@
+product.txt
+[product name , product code , price , product description]
+
+enquiry.txt
+[date , name , contact person , address , phone , email , source , remarks ]
+
+source.txt
+sources
