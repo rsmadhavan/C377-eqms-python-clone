@@ -53,7 +53,7 @@ def add_enquiry():
         enquiries=read_data()    
 
     enquiries.append({
-        "Enquiry Number": enquiry_number,
+        "enquiry Number": enquiry_number,
         "Customer Name": customer_name,
         "Date": date,
         "Contact Person": contact_person,
