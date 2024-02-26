@@ -4,7 +4,7 @@ import source
 
 def main_menu():
     while True:
-        print("\NMAIN MENU :")
+        print("\nMAIN MENU :")
         print("1. PRODUCT MENU")
         print("2. SOURCE MENU")
         print("3. ENQUIRY MENU")
@@ -15,7 +15,7 @@ def main_menu():
         elif choice == "2":
             source.source_menu()
         elif choice == "3":
-            enquiry.main_menu()
+            enquiry.enquiry_menu()
         elif choice == '4':
             break
         else:

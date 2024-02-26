@@ -1,0 +1,5 @@
+{'Enquiry Number': '1', 'Customer Name': 'Hritik', 'Date': '22-2-2024', 'Contact Person': 'Madav', 'Address': 'Chennai', 'Phone Number': '876545672', 'Email': 'hritik@gmail.com', 'Source': 'Linkedin', 'Product Enquired': 'iphone' }
+{'Enquiry Number': '2', 'Customer Name': 'Madav', 'Date': '22-02-2024', 'Contact Person': 'Akhil', 'Address': 'Delhi', 'Phone Number': '876545678765', 'Email': 'madav@gmail.com', 'Source': 'Facebook', 'Product Enquired': 'car' }
+{'Enquiry Number': '3', 'Customer Name': 'Akhil', 'Date': '22-02-2024', 'Contact Person': 'Saranya', 'Address': 'Mumbai', 'Phone Number': '9876567876', 'Email': 'Akhil@gmail.com', 'Source': 'newspaper', 'Product Enquired': 'Bike' }
+{'Enquiry Number': '4', 'Customer Name': 'Akhil', 'Date': '22-02-2024', 'Contact Person': 'Saranya', 'Address': 'Mumbai', 'Phone Number': '9876567876', 'Email': 'Akhil@gmail.com', 'Source': 'newspaper', 'Product Enquired': 'Bike' }
+{'Enquiry Number': '5', 'Customer Name': 'Akhil', 'Date': '22-02-2024', 'Contact Person': 'Saranya', 'Address': 'Mumbai', 'Phone Number': '9876567876', 'Email': 'Akhil@gmail.com', 'Source': 'newspaper', 'Product Enquired': 'Bike' }

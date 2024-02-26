@@ -14,14 +14,14 @@ def display_source():
             source=file.readlines()
             source=[s.strip() for s in source]
             for i in range(len(source)):
-                print(f"\t{i+1} : {source[i]}")
+                print(f"\t\t{i+1} : {source[i]}")
     except FileNotFoundError:
         print("ERROR : COULD NOT FIND THE FILE 'source.txt'")
         return []
 
 
 def add_source():
-    source=input("\n\tENTER THE SOURCE : ")
+    source=input("\n\t\tENTER THE SOURCE : ")
     with open('source.txt', 'a') as file:
         file.write('\n')
         file.write(source)
@@ -36,7 +36,7 @@ def source_menu():
             2. DISPLAY SOURCE
             3. GO BACK
                 ''')
-        choice=input("\tENTER CHOICE : ")
+        choice=input("\t\tENTER CHOICE : ")
         if choice=='1':
             add_source()
         elif choice=='2':
