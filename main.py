@@ -3,6 +3,17 @@ import product1
 import source
 
 def main_menu():
+    OKBLUE='\033[94m'
+    ENDC = '\033[0m'
+    print(f"""
+          {OKBLUE}
+          EQMS PYTHON CLONE
+          Team Members
+                - Akhil Darla
+                - Saranya
+                - Hritik Kesharwani
+                - Madhavan
+                - Tharun Reddy    {ENDC}""")
     while True:
         print("\nMAIN MENU :")
         print("1. PRODUCT MENU")
