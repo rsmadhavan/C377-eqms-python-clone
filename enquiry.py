@@ -10,11 +10,22 @@ def get_source():
     return source.get_source()
 
 def str_to_dict(string):
+    # Strip extra '{' and '}' from the beginning and end of the string
     stripped_string = string.strip('{}')
- 
+
+    # Split pairs by comma-space and handle cases where there are extra single quotes
     pairs = stripped_string.split(', ')
- 
-    return {key[1:-1]: value[1:-1] for key, value in (pair.split(': ') for pair in pairs)}
+
+    # Construct dictionary by splitting each pair by colon-space and stripping any extra characters
+    result_dict = {}
+    for pair in pairs:
+        key, value = pair.split(': ')
+        key = key.strip("'")
+        value = value.strip("'")
+        result_dict[key] = value
+
+    return result_dict
+
  
 def read_data():
     with open('enquiry.txt','r') as file:
