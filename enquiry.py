@@ -63,12 +63,6 @@ def read_data():
 
     return list_dict
 
-def display_enquiry(index):
-    print("Enquiry Number\tCustomer Name\tDate\tContact Person\tAddress\tPhone Number\tEmail\tSource\tProduct Enquired")
-    enquiry=enquiries[int(index)]
-    row = '\t'.join([enquiry[key] for key in enquiry])
-    print(row)
-
 def add_enquiry():
     enquiry_number = input("Enter enquiry number: ")
     customer_name = input("Enter customer name: ")
@@ -83,14 +77,8 @@ def add_enquiry():
     source = list_source[source_option] if source_option in range(len(list_source)) else 'default'
     display_product()
     list_product=get_product()
-    print(list_product)
-    print(list_product[1])
-    print(list_product[1][0])
-    print(list_product[1][1])
-    print(list_product[1][2])
-    print(list_product[1][3])
     product_option=int(input("Enter product choice: ")) - 1
-    product_enquired = list_product[product_option][1] if product_option in range(len(list_product)) else 'default'
+    product_enquired = list_product[product_option][1].replace('"','') if product_option in range(len(list_product)) else 'default'
 
     global enquiries
     if not enquiries:
@@ -137,11 +125,13 @@ def search_enquiry(enquiry_number):
     for dict in enquiries:
         if dict['Enquiry Number']==str(enquiry_number):
             found=True
+            print("Enquiry Number\tCustomer Name\tDate\tContact Person\tAddress\tPhone Number\tEmail\tSource\tProduct Enquired")
+            row = '\t'.join([dict[key] for key in dict])
+            print(row)
             break
     if not found:
         print("Enquiry not found.")
-    else:
-        display_enquiry(enquiry_number)
+   
 
 def save_data():
     file_path = "enquiry.txt"  
