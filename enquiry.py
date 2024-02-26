@@ -9,12 +9,29 @@ def display_source():
 def get_source():
     return source.get_source()
 
+def get_product():
+    return product1.get_product()
+
+def display_product():
+    return product1.display_product()
+
 def str_to_dict(string):
+    # Strip extra '{' and '}' from the beginning and end of the string
     stripped_string = string.strip('{}')
- 
+
+    # Split pairs by comma-space and handle cases where there are extra single quotes
     pairs = stripped_string.split(', ')
- 
-    return {key[1:-1]: value[1:-1] for key, value in (pair.split(': ') for pair in pairs)}
+
+    # Construct dictionary by splitting each pair by colon-space and stripping any extra characters
+    result_dict = {}
+    for pair in pairs:
+        key, value = pair.split(': ')
+        key = key.strip("'")
+        value = value.strip("'")
+        result_dict[key] = value
+    result_dict['Product Enquired']=result_dict['Product Enquired'].replace("'",'').replace('}','').replace('\n','')
+    return result_dict
+
  
 def read_data():
     with open('enquiry.txt','r') as file:
@@ -25,14 +42,32 @@ def read_data():
             list_dict.append(temp_dict)
         return list_dict
 
+
 def display_enquiries():
     enquiries=read_data()
-    print("E.no\tName\tDate\tContact Person  Address\tPhone number\tEmail    \tSource\tProduct enquired")
+    print("E.no\tName\tDate\tContact Person  Address\tPhone number\tEmail    \tSource\t\tProduct Enquired")
     for enquiry_dict in enquiries:
         row=''
         for value in enquiry_dict.values():
             row+=f'{value}\t'
         print(row)
+
+def read_data():
+    with open('enquiry.txt', 'r') as file:
+        data = file.readlines()
+        list_dict = []
+
+        for line in data:
+            temp_dict = str_to_dict(line)
+            list_dict.append(temp_dict)
+
+    return list_dict
+
+def display_enquiry(index):
+    print("Enquiry Number\tCustomer Name\tDate\tContact Person\tAddress\tPhone Number\tEmail\tSource\tProduct Enquired")
+    enquiry=enquiries[int(index)]
+    row = '\t'.join([enquiry[key] for key in enquiry])
+    print(row)
 
 def add_enquiry():
     enquiry_number = input("Enter enquiry number: ")
@@ -46,14 +81,23 @@ def add_enquiry():
     list_source=get_source()
     source_option=int(input("Enter source choice: ")) - 1
     source = list_source[source_option] if source_option in range(len(list_source)) else 'default'
-    product_enquired = input("Enter product enquired: ")
+    display_product()
+    list_product=get_product()
+    print(list_product)
+    print(list_product[1])
+    print(list_product[1][0])
+    print(list_product[1][1])
+    print(list_product[1][2])
+    print(list_product[1][3])
+    product_option=int(input("Enter product choice: ")) - 1
+    product_enquired = list_product[product_option][1] if product_option in range(len(list_product)) else 'default'
 
     global enquiries
     if not enquiries:
         enquiries=read_data()    
 
     enquiries.append({
-        "enquiry Number": enquiry_number,
+        "Enquiry Number": enquiry_number,
         "Customer Name": customer_name,
         "Date": date,
         "Contact Person": contact_person,
@@ -61,7 +105,7 @@ def add_enquiry():
         "Phone Number": phone_number,
         "Email": email,
         "Source": source,
-        "Product enquired": product_enquired
+        "Product Enquired": product_enquired
     })
     save_data()
     print("enquiry added successfully.")
@@ -70,13 +114,18 @@ def delete_enquiry(enquiry_number):
     global enquiries
     if not enquiries:
         enquiries=read_data()
- 
+    found=False
     for enquiry in enquiries:
         if enquiry["Enquiry Number"] == enquiry_number:
+            #display_enquiry(enquiry_number)
             enquiries.remove(enquiry)
-            break  
-    save_data()
-    print("enquiry deleted successfully.")
+            found=True  
+            save_data()
+            break
+    if found:
+        print("enquiry deleted successfully.")
+    else:
+        print("enquiry not found")
 
 # Searchin functionatily is broken
 # update logic to search using the key or just revert to list
@@ -87,11 +136,12 @@ def search_enquiry(enquiry_number):
     found = False
     for dict in enquiries:
         if dict['Enquiry Number']==str(enquiry_number):
-            print(dict)
             found=True
             break
     if not found:
         print("Enquiry not found.")
+    else:
+        display_enquiry(enquiry_number)
 
 def save_data():
     file_path = "enquiry.txt"  
@@ -127,8 +177,6 @@ def enquiry_menu():
             break
         elif choice =="6":
             read_data()
-        elif choice=='7':
-            test_source()
         else:
             print("Invalid choice. Please try again.")
 

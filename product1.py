@@ -35,7 +35,7 @@ def get_product():
         with open('product.txt', 'r') as file:
             products=file.readlines()
             product=[p.strip() for p in products]
-            return product
+            return product.strip('[]').split(',')
     except FileNotFoundError:
         print("ERROR : COULD NOT FIND THE FILE 'source.txt'")
         return []   
