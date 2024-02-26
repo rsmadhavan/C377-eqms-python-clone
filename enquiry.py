@@ -28,9 +28,9 @@ def read_data():
 def display_enquiries():
     enquiries=read_data()
     print("E.no\tName\tDate\tContact Person  Address\tPhone number\tEmail    \tSource\tProduct enquired")
-    for dict in enquiries:
+    for enquiry_dict in enquiries:
         row=''
-        for value in dict.values():
+        for value in enquiry_dict.values():
             row+=f'{value}\t'
         print(row)
 
@@ -47,9 +47,13 @@ def add_enquiry():
     source_option=int(input("Enter source choice: ")) - 1
     source = list_source[source_option] if source_option in range(len(list_source)) else 'default'
     product_enquired = input("Enter product enquired: ")
-    
+
+    global enquiries
+    if not enquiries:
+        enquiries=read_data()    
+
     enquiries.append({
-        "enquiry Number": enquiry_number,
+        "Enquiry Number": enquiry_number,
         "Customer Name": customer_name,
         "Date": date,
         "Contact Person": contact_person,
@@ -64,6 +68,9 @@ def add_enquiry():
 
 def delete_enquiry(enquiry_number):
     global enquiries
+    if not enquiries:
+        enquiries=read_data()
+ 
     for enquiry in enquiries:
         if enquiry["Enquiry Number"] == enquiry_number:
             enquiries.remove(enquiry)

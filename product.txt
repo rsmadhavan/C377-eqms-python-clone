@@ -3,3 +3,4 @@
 [3,'samsung s24',84000,'samsung flagship']
 [4,'canon 3000D',31999,'budget camera']
 [5, 'guitar', 8000.0, 'instrument']
+[6, 'nike airforce', 10000.0, 'shoes']
