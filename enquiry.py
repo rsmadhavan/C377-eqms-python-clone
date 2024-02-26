@@ -32,6 +32,12 @@ def str_to_dict(string):
     result_dict['Product Enquired']=result_dict['Product Enquired'].replace("'",'').replace('}','').replace('\n','')
     return result_dict
 
+def get_enquiry_numbers():
+    enquiries=read_data()
+    row=''
+    for enquiry_dict in enquiries:
+        row+=f'{enquiry_dict['Enquiry Number']},'
+    print('Enquiry numbers ',row) 
  
 def read_data():
     with open('enquiry.txt','r') as file:
@@ -125,7 +131,7 @@ def search_enquiry(enquiry_number):
     for dict in enquiries:
         if dict['Enquiry Number']==str(enquiry_number):
             found=True
-            print("Enquiry Number\tCustomer Name\tDate\tContact Person\tAddress\tPhone Number\tEmail\tSource\tProduct Enquired")
+            print("\n\nEnquiry Number\tCustomer Name\tDate\tContact Person\tAddress\tPhone Number\tEmail\tSource\tProduct Enquired")
             row = '\t'.join([dict[key] for key in dict])
             print(row)
             break
@@ -157,9 +163,11 @@ def enquiry_menu():
         elif choice == "2":
             add_enquiry()
         elif choice == "3":
+            get_enquiry_numbers()
             enquiry_number = input("Enter enquiry number to delete: ")
             delete_enquiry(enquiry_number)
         elif choice == "4":
+            get_enquiry_numbers()
             enquiry_number = input("Enter enquiry number to search: ")
             search_enquiry(enquiry_number)
         elif choice == "5":
