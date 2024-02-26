@@ -72,15 +72,17 @@ def read_data():
 def add_enquiry():
     enquiry_number = input("Enter enquiry number: ")
     customer_name = input("Enter customer name: ")
-    date = input("Enter date: ")
+    date = input("Enter date [dd-mm-yyyy]: ")
     contact_person = input("Enter contact person: ")
     address = input("Enter address: ")
     phone_number = input("Enter phone number: ")
     email = input("Enter email: ")
+    print("\t\tSelect Source")
     display_source()
     list_source=get_source()
     source_option=int(input("Enter source choice: ")) - 1
     source = list_source[source_option] if source_option in range(len(list_source)) else 'default'
+    print("\t\tSelect Product")
     display_product()
     list_product=get_product()
     product_option=int(input("Enter product choice: ")) - 1
